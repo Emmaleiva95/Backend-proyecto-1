@@ -8,11 +8,12 @@ dotenv.config()
 
 const app = express();
 
+const PORT = process.env.PORT || 8080
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/mocks', mockRoutes)
 
-const httpServer = app.listen(8080, () => console.log('Servidor listo en el puerto '+ 8080));
+const httpServer = app.listen(PORT, () => console.log('Servidor listo en el puerto '+ PORT));
 connectDB();
