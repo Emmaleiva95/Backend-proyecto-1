@@ -34,24 +34,24 @@ router.post('/generateData', async (req, res) => {
 
 // OBTENER DATA DE LA BD.
 router.get('/getUsersDB', async (req, res) => {
-  
   try {
     let users = await userModel.find();
     res.send(users)
 } catch (error) {
     console.log(error)
+    res.end()
     return null;
 }
 
 });
 
 router.get('/getPetsDB', async (req, res) => {
-  
   try {
     let pets = await petModel.find();
     res.send(pets)
 } catch (error) {
     console.log(error)
+    res.end()
     return null;
 }
 });
